@@ -15,4 +15,18 @@ The interface should have a simple design with limited buttons and clear labelin
 2. **Consistent Navigation and Feedback:**  
    The same buttons should always perform the same actions, and the system should provide immediate visual or sound feedback (like a beep or message) when an action is taken. This builds user confidence and reduces errors.
 
+### Q3: Security Vulnerabilities and Solutions
+
+1. **Unauthorized Access to the Admin Dashboard:**  
+   - *Vulnerability:* If the admin dashboard is not protected, outsiders could view or manipulate orders and sales data.  
+   - *Solution:* Implement authentication with strong passwords and role-based access control (RBAC) to restrict access.
+
+2. **Order Tampering During Transmission:**  
+   - *Vulnerability:* If order data is sent in plain text from the ESP32 to the cloud, it could be intercepted and modified.  
+   - *Solution:* Use HTTPS or encrypted MQTT protocol to securely transmit order data.
+
+3. **Theft or Misuse of Smart Pads:**  
+   - *Vulnerability:* Someone could steal or misuse a smart pad to send fake orders.  
+   - *Solution:* Assign each device a unique ID and validate device requests on the server side before processing.
+
 
